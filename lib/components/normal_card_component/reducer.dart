@@ -1,6 +1,6 @@
 import 'package:fish_redux/fish_redux.dart';
 
-import '../action.dart';
+import '../../pages//make_card_page/action.dart';
 import 'state.dart';
 
 Reducer<LBNormalCardState> buildReducer() {
@@ -13,6 +13,6 @@ Reducer<LBNormalCardState> buildReducer() {
 
 LBNormalCardState _removeImages(LBNormalCardState state, Action action) {
   final LBNormalCardState newState = state.clone();
-  newState.image = null;
+  newState.makeCardModel.imageUrl = null;
   return newState;
 }

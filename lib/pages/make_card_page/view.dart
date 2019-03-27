@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'action.dart';
 import 'state.dart';
-import '../models/make_card_model.dart';
+import '../../models/make_card_mode.dart';
 
 Widget buildView(LBMakeCardState state, Dispatch dispatch, ViewService viewService) {
   return Scaffold(
@@ -12,15 +12,8 @@ Widget buildView(LBMakeCardState state, Dispatch dispatch, ViewService viewServi
       title: const Text('制卡'),
       actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.play_arrow),
+            icon: Icon(Icons.content_copy),
             tooltip: '预览',
-            onPressed: () {
-              dispatch(LBMakeCardActionCreator.previewAction());
-            },
-          ),
-          IconButton(
-            icon: Icon(Icons.archive),
-            tooltip: '制作',
             onPressed: () {
               dispatch(LBMakeCardActionCreator.saveAction());
             },

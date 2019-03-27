@@ -2,7 +2,7 @@ import 'package:fish_redux/fish_redux.dart';
 
 import 'action.dart';
 import 'state.dart';
-import '../models/make_card_model.dart';
+import '../../models/make_card_mode.dart';
 
 Reducer<LBMakeCardState> buildReducer() {
   return asReducer(

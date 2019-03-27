@@ -1,15 +1,15 @@
 import 'package:fish_redux/fish_redux.dart';
+import '../../models/make_card_model.dart';
 
 class LBTextOverImageCardState implements Cloneable<LBTextOverImageCardState> {
 
-  String text;
-  String image;
+  bool isPreview = false;
+  LBMakeCardModel makeCardModel;
 
   @override
   LBTextOverImageCardState clone() {
     return LBTextOverImageCardState()
-      ..text = text
-      ..image = image
+      ..makeCardModel = makeCardModel
     ;
   }
 }

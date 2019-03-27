@@ -4,23 +4,23 @@ import 'effect.dart';
 import 'reducer.dart';
 import 'state.dart';
 import 'view.dart';
-import 'normal_card_component/component.dart';
-import 'textoverimage_card_component/component.dart';
+import '../../components/normal_card_component/component.dart';
+import '../../components/textoverimage_card_component/component.dart';
 
-class LBMakeCardPage extends Page<LBMakeCardState, Map<String, dynamic>> {
-  LBMakeCardPage()
+class LBPreviewPage extends Page<LBPreviewState, Map<String, dynamic>> {
+  LBPreviewPage()
       : super(
             initState: initState,
             effect: buildEffect(),
             reducer: buildReducer(),
             view: buildView,
-            dependencies: Dependencies<LBMakeCardState>(
+            dependencies: Dependencies<LBPreviewState>(
                 adapter: null,
-                slots: <String, Dependent<LBMakeCardState>>{
+                slots: <String, Dependent<LBPreviewState>>{
                   'normal_card': LBNormalCardConnector() + LBNormalCardComponent(),
                   'textOverImage_card': LBTextOverImageCardConnector() + LBTextOverImageCardComponent()
                 }),
-            middlewares: <Middleware<LBMakeCardState>>[
+            middlewares: <Middleware<LBPreviewState>>[
             ],);
 
 }

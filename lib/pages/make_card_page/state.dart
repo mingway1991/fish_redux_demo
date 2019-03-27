@@ -1,7 +1,8 @@
 import 'package:fish_redux/fish_redux.dart';
-import '../models/make_card_model.dart';
-import 'normal_card_component/state.dart';
-import 'textoverimage_card_component/state.dart';
+import '../../models/make_card_mode.dart';
+import '../../components/normal_card_component/state.dart';
+import '../../components/textoverimage_card_component/state.dart';
+import 'helper.dart';
 
 class LBMakeCardState implements Cloneable<LBMakeCardState> {
 
@@ -37,8 +38,7 @@ class LBNormalCardConnector extends ConnOp<LBMakeCardState, LBNormalCardState> {
   @override
   LBNormalCardState get(LBMakeCardState state) {
     final LBNormalCardState normalCardState = LBNormalCardState();
-    normalCardState.text = state.text;
-    normalCardState.image = (state.images != null && state.images.length > 0) ? state.images[state.selectIndex] : null;
+    normalCardState.makeCardModel = generateMakeCardModel(state.text, state.images, state.selectIndex);
     return normalCardState;
   }
 
@@ -50,8 +50,7 @@ class LBTextOverImageCardConnector extends ConnOp<LBMakeCardState, LBTextOverIma
   @override
   LBTextOverImageCardState get(LBMakeCardState state) {
     final LBTextOverImageCardState textOverImageCardState = LBTextOverImageCardState();
-    textOverImageCardState.text = state.text;
-    textOverImageCardState.image = (state.images != null && state.images.length > 0) ? state.images[state.selectIndex] : null;
+    textOverImageCardState.makeCardModel = generateMakeCardModel(state.text, state.images, state.selectIndex);
     return textOverImageCardState;
   }
 

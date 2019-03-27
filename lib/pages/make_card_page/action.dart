@@ -1,13 +1,12 @@
 import 'package:fish_redux/fish_redux.dart';
-import '../models/make_card_model.dart';
+import 'package:demo/models/make_card_mode.dart';
 
 enum LBMakeCardAction {
   clickImage,
   clickRemoveImage,
   removeImages,
   updateSelectIndex,
-  preview,
-  save,
+  clickSave,
   changeMode,
 }
 
@@ -28,12 +27,8 @@ class LBMakeCardActionCreator {
     return Action(LBMakeCardAction.updateSelectIndex, payload: newIndex);
   }
 
-  static Action previewAction() {
-    return const Action(LBMakeCardAction.preview);
-  }
-
   static Action saveAction() {
-    return const Action(LBMakeCardAction.save);
+    return const Action(LBMakeCardAction.clickSave);
   }
 
   static Action changeModeAction(LBMakeCardMode mode) {

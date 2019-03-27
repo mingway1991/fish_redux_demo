@@ -4,9 +4,6 @@ import 'state.dart';
 
 Effect<LBPreviewState> buildEffect() {
   return combineEffects(<Object, Effect<LBPreviewState>>{
-    LBPreviewAction.action: _onAction,
-  });
-}
 
-void _onAction(Action action, Context<LBPreviewState> ctx) {
+  });
 }

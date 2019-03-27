@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'make_card_page/page.dart';
+import 'pages/make_card_page/page.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,18 +13,6 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) =>
       MaterialApp(home: LBMakeCardPage().buildPage(<String, dynamic>{
         'text':'测试文本，啊啊啊啊啊啊啊啊啊啊啊啊啊啊\neddcscsdcsdc\ndscdscsccdsfcsdcds'
-            '测试文本，啊啊啊啊啊啊啊啊啊啊啊啊啊啊\neddcscsdcsdc\ndscdscsccdsfcsdcds'
-            '测试文本，啊啊啊啊啊啊啊啊啊啊啊啊啊啊\neddcscsdcsdc\ndscdscsccdsfcsdcds'
-            '测试文本，啊啊啊啊啊啊啊啊啊啊啊啊啊啊\neddcscsdcsdc\ndscdscsccdsfcsdcds'
-            '测试文本，啊啊啊啊啊啊啊啊啊啊啊啊啊啊\neddcscsdcsdc\ndscdscsccdsfcsdcds'
-            '测试文本，啊啊啊啊啊啊啊啊啊啊啊啊啊啊\neddcscsdcsdc\ndscdscsccdsfcsdcds'
-            '测试文本，啊啊啊啊啊啊啊啊啊啊啊啊啊啊\neddcscsdcsdc\ndscdscsccdsfcsdcds'
-            '测试文本，啊啊啊啊啊啊啊啊啊啊啊啊啊啊\neddcscsdcsdc\ndscdscsccdsfcsdcds'
-            '测试文本，啊啊啊啊啊啊啊啊啊啊啊啊啊啊\neddcscsdcsdc\ndscdscsccdsfcsdcds'
-            '测试文本，啊啊啊啊啊啊啊啊啊啊啊啊啊啊\neddcscsdcsdc\ndscdscsccdsfcsdcds'
-            '测试文本，啊啊啊啊啊啊啊啊啊啊啊啊啊啊\neddcscsdcsdc\ndscdscsccdsfcsdcds'
-            '测试文本，啊啊啊啊啊啊啊啊啊啊啊啊啊啊\neddcscsdcsdc\ndscdscsccdsfcsdcds'
-            '测试文本，啊啊啊啊啊啊啊啊啊啊啊啊啊啊\neddcscsdcsdc\ndscdscsccdsfcsdcds'
             '测试文本，啊啊啊啊啊啊啊啊啊啊啊啊啊啊\neddcscsdcsdc\ndscdscsccdsfcsdcds'
             '测试文本，啊啊啊啊啊啊啊啊啊啊啊啊啊啊\neddcscsdcsdc\ndscdscsccdsfcsdcds',
         'images':[

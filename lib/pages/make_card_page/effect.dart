@@ -5,12 +5,18 @@ import 'action.dart';
 import 'state.dart';
 import '../select_image_page/page.dart' as select_image_page;
 import '../select_image_page/state.dart';
+import '../preview_page/page.dart' as preview_page;
+import '../preview_page/state.dart';
+import '../../models/make_card_mode.dart';
+import '../../models/make_card_model.dart';
+import 'helper.dart';
 
 Effect<LBMakeCardState> buildEffect() {
   return combineEffects(<Object, Effect<LBMakeCardState>>{
     Lifecycle.initState: _init,
     LBMakeCardAction.clickImage: _clickImageAction,
     LBMakeCardAction.clickRemoveImage: _clickRemoveImageAction,
+    LBMakeCardAction.clickSave: _clickSaveAction,
   });
 }
 
@@ -56,4 +62,17 @@ void _clickRemoveImageAction(Action action, Context<LBMakeCardState> ctx) async 
       ],
     ),
   );
+}
+
+void _clickSaveAction(Action action, Context<LBMakeCardState> ctx) {
+
+  LBMakeCardMode mode = ctx.state.mode;
+  LBMakeCardModel makeCardModel = generateMakeCardModel(ctx.state.text, ctx.state.images, ctx.state.selectIndex);
+
+  Navigator.of(ctx.context)
+      .push<LBPreviewState>(MaterialPageRoute<LBPreviewState>(
+      builder: (BuildContext buildCtx) =>
+          preview_page.LBPreviewPage().buildPage({'makeCardModel':makeCardModel,'mode':mode}))).then((LBPreviewState previewState) {
+
+  });
 }
