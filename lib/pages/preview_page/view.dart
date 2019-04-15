@@ -13,25 +13,30 @@ Widget buildView(LBPreviewState state, Dispatch dispatch, ViewService viewServic
           IconButton(
             icon: Icon(Icons.add_to_photos),
             tooltip: '保存',
-            onPressed: null,
+            onPressed: () {
+              dispatch(LBPreviewActionCreator.saveAction());
+            },
           ),
         ]
     ),
-    body: Container(
-      child: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Offstage(
-              offstage: state.mode != LBMakeCardMode.normal,
-              child: viewService.buildComponent('normal_card'),
+    body: RepaintBoundary(
+        key: state.captureKey,
+        child: Container(
+          child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                Offstage(
+                  offstage: state.mode != LBMakeCardMode.normal,
+                  child: viewService.buildComponent('normal_card'),
+                ),
+                Offstage(
+                  offstage: state.mode != LBMakeCardMode.textOverImage,
+                  child: viewService.buildComponent('textOverImage_card'),
+                ),
+              ],
             ),
-            Offstage(
-              offstage: state.mode != LBMakeCardMode.textOverImage,
-              child: viewService.buildComponent('textOverImage_card'),
-            ),
-          ],
+          ),
         ),
-      ),
     ),
   );
 }

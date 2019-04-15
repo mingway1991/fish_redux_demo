@@ -1,4 +1,5 @@
 import 'package:fish_redux/fish_redux.dart';
+import 'package:flutter/material.dart';
 import '../../models/make_card_mode.dart';
 import '../../models/make_card_model.dart';
 import '../../components/normal_card_component/state.dart';
@@ -8,6 +9,7 @@ class LBPreviewState implements Cloneable<LBPreviewState> {
 
   LBMakeCardMode mode = LBMakeCardMode.normal;
   LBMakeCardModel makeCardModel;
+  GlobalKey captureKey = GlobalKey();
 
   @override
   LBPreviewState clone() {

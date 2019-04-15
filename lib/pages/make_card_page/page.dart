@@ -20,7 +20,7 @@ class LBMakeCardPage extends Page<LBMakeCardState, Map<String, dynamic>> {
                   'normal_card': LBNormalCardConnector() + LBNormalCardComponent(),
                   'textOverImage_card': LBTextOverImageCardConnector() + LBTextOverImageCardComponent()
                 }),
-            middlewares: <Middleware<LBMakeCardState>>[
+            middleware: <Middleware<LBMakeCardState>>[
             ],);
 
 }

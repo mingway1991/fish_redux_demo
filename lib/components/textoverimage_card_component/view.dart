@@ -49,17 +49,18 @@ Widget buildView(LBTextOverImageCardState state, Dispatch dispatch, ViewService 
             left: 10,
             bottom: 10,
             child: Offstage(
-              offstage: state.makeCardModel.text == null,
-              child: IgnorePointer(
+                offstage: state.makeCardModel.text == null,
+                child: IgnorePointer(
                   ignoring: true,
                   child: Text(
                     state.makeCardModel.text,
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 16,color: Colors.black87),
                   ),
-              ),
+                ),
             ),
           ),
+
         ],
       )
     ),

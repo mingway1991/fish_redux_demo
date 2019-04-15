@@ -1,10 +1,10 @@
 import 'package:fish_redux/fish_redux.dart';
 
 //TODO replace with your own action
-enum LBPreviewAction { action }
+enum LBPreviewAction { saveAction }
 
 class LBPreviewActionCreator {
-  static Action onAction() {
-    return const Action(LBPreviewAction.action);
+  static Action saveAction() {
+    return const Action(LBPreviewAction.saveAction);
   }
 }

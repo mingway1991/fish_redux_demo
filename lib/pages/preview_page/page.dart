@@ -20,7 +20,7 @@ class LBPreviewPage extends Page<LBPreviewState, Map<String, dynamic>> {
                   'normal_card': LBNormalCardConnector() + LBNormalCardComponent(),
                   'textOverImage_card': LBTextOverImageCardConnector() + LBTextOverImageCardComponent()
                 }),
-            middlewares: <Middleware<LBPreviewState>>[
+            middleware: <Middleware<LBPreviewState>>[
             ],);
 
 }

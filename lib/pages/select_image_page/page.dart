@@ -16,7 +16,7 @@ class LBSelectImagePage extends Page<LBSelectImageState, Map<String, dynamic>> {
                 adapter: null,
                 slots: <String, Dependent<LBSelectImageState>>{
                 }),
-            middlewares: <Middleware<LBSelectImageState>>[
+            middleware: <Middleware<LBSelectImageState>>[
             ],);
 
 }
