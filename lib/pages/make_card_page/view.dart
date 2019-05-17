@@ -6,6 +6,7 @@ import 'state.dart';
 import '../../models/make_card_mode.dart';
 
 Widget buildView(LBMakeCardState state, Dispatch dispatch, ViewService viewService) {
+  final ListAdapter adapter = viewService.buildAdapter();
   return Scaffold(
     appBar: AppBar(
       centerTitle: true,
@@ -21,20 +22,28 @@ Widget buildView(LBMakeCardState state, Dispatch dispatch, ViewService viewServi
         ]
     ),
     body: Container(
-      child: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Offstage(
-              offstage: state.mode != LBMakeCardMode.normal,
-              child: viewService.buildComponent('normal_card'),
-            ),
-            Offstage(
-              offstage: state.mode != LBMakeCardMode.textOverImage,
-              child: viewService.buildComponent('textOverImage_card'),
-            ),
-          ],
-        ),
-      ),
+      child: Column(
+        children: <Widget>[
+          Offstage(
+            offstage: state.mode != LBMakeCardMode.list,
+            child: Container(
+              height: 44.0,
+                child: ListView.builder(
+                    itemBuilder: adapter.itemBuilder,
+                    itemCount: adapter.itemCount
+                ),
+              ),
+          ),
+          Offstage(
+            offstage: state.mode != LBMakeCardMode.normal,
+            child: viewService.buildComponent('normal_card'),
+          ),
+          Offstage(
+            offstage: state.mode != LBMakeCardMode.textOverImage,
+            child: viewService.buildComponent('textOverImage_card'),
+          ),
+        ],
+      )
     ),
     bottomNavigationBar: BottomAppBar(
       child: new Row(
@@ -52,6 +61,13 @@ Widget buildView(LBMakeCardState state, Dispatch dispatch, ViewService viewServi
               style: TextStyle(color: state.mode == LBMakeCardMode.textOverImage ? Colors.black : Colors.grey),
             ),
             onPressed: () => dispatch(LBMakeCardActionCreator.changeModeAction(LBMakeCardMode.textOverImage)),
+          ),
+          FlatButton(
+            child: Text(
+              '模式三',
+              style: TextStyle(color: state.mode == LBMakeCardMode.list ? Colors.black : Colors.grey),
+            ),
+            onPressed: () => dispatch(LBMakeCardActionCreator.changeModeAction(LBMakeCardMode.list)),
           )
         ],
       ),

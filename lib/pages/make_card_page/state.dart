@@ -3,6 +3,7 @@ import '../../models/make_card_mode.dart';
 import '../../components/normal_card_component/state.dart';
 import '../../components/textoverimage_card_component/state.dart';
 import 'helper.dart';
+import '../../components/list_item_component/state.dart';
 
 class LBMakeCardState implements Cloneable<LBMakeCardState> {
 
@@ -11,6 +12,7 @@ class LBMakeCardState implements Cloneable<LBMakeCardState> {
   List<String> images;
   int selectIndex = 0;
   LBMakeCardMode mode = LBMakeCardMode.normal;
+  List<LBListItemState> list = [ LBListItemState(), LBListItemState() ];
 
   @override
   LBMakeCardState clone() {

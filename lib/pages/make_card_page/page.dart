@@ -6,6 +6,7 @@ import 'state.dart';
 import 'view.dart';
 import '../../components/normal_card_component/component.dart';
 import '../../components/textoverimage_card_component/component.dart';
+import '../../adapters/list_adapter/adapter.dart';
 
 class LBMakeCardPage extends Page<LBMakeCardState, Map<String, dynamic>> {
   LBMakeCardPage()
@@ -15,7 +16,7 @@ class LBMakeCardPage extends Page<LBMakeCardState, Map<String, dynamic>> {
             reducer: buildReducer(),
             view: buildView,
             dependencies: Dependencies<LBMakeCardState>(
-                adapter: null,
+                adapter: LBListAdapter(),
                 slots: <String, Dependent<LBMakeCardState>>{
                   'normal_card': LBNormalCardConnector() + LBNormalCardComponent(),
                   'textOverImage_card': LBTextOverImageCardConnector() + LBTextOverImageCardComponent()
